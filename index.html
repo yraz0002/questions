@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>The Australian Wine</title>
+    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <!-- Import pure.css -->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+        integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,700&display=swap" rel="stylesheet">
+
+    <!-- CSS file -->
+    <link rel="stylesheet" type="text/css" href="style.css" media="all">
+
+
+    <style>
+        body {
+            background-image: url(https://media.istockphoto.com/id/1268618849/vector/dark-red-abstract-blurry-background.jpg?s=612x612&w=0&k=20&c=4TwjoXes5Rj7i5WNsapG39zbqA_IPZJpHQpQSFl3SUY=); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+            background-size: cover; /* This will make the background image cover the whole page */
+            background-position: center top; /* This will position the background image at the center from top */
+        }
+        .highlight{
+             color: #b10000;
+             
+        }
+        .eight{
+            color: #b10000;
+            font-weight: bold;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="page">
+        <h1 id="main">The Australian Great Wine</h1>
+        <!-- pure grid group -->
+        <div class="pure-g">
+            <div class="pure-u-1-2">
+                <div id="vis1" class="vis-container"></div>
+            </div>
+            <div class="pure-u-1-2">
+                <div class="pure-g">
+                    <div class="pure-u-1-2">
+                        <span style="font-size: 30px; padding-top: 0px;"> If you are fan of wine, Australia is a perfect
+                            place for you!
+                    </div>
+
+                    <div class="pure-u-1-2">
+                        <span> Australia is the<span class="eight"> 8th </span>country in the world in wine producing with 4957 different wines, and
+                            located in the 8th grade in a list of the best wines with an average country rate of 87.89
+                            (by a scale of 80 to 100).
+                    </div>
+                    <div class="pure-u-1">
+                        <img id="grapes"
+                            src="https://img.lovepik.com/photo/20230422/medium/lovepik-a-bunch-of-red-grapes-over-wooden-background-photo-image_352376172.jpg" />
+    
+                    </div>
+                </div>
+                </div>
+                
+            
+
+        </div>
+        <!-- end pure grid group -->
+        <br>
+
+
+
+
+        <hr class="hr3">
+
+        <h2 id="sec2">Where Can You Find the Best Wine In Australia?</h2>
+        <!-- pure grid group -->
+        <div class="pure-g">
+            <div class="pure-u-1-2">
+                <div id="vis2" class="vis-container"></div>
+            </div>
+            <div class="pure-u-1-4">
+                <p> By a minor difference,<span class="highlight">Tasmania</span> is the state that the most sommeliers like, with average wine rate of
+                    <span class="highlight">88.03</span>.</p>
+                <p> The second and third rating place are belonged to <span class="highlight">Victoria</span> and South Australia, with the same
+                    average wine rate of <span class="highlight">87.89</span>.
+                    <p> Although the <span class="highlight">New South Wales</span> attract masses of tourist, thanks to the great city of Sydney , the average rating of the
+                        state is decrease the average of the country with wine rate of <span class="highlight">87.86</span>.
+                        <p>With the same average rete as the New South wales, located <span class="highlight">Western Australia</span> with average rate of <span class="highlight">87.86</span>.
+                            <p> In the last place is <span class="highlight">Queensland</span> with average wine rate of <span class="highlight">85.00</span>.
+
+            </div>
+            <div class="pure-u-1-4">
+                <img src="https://providence.com.au/wp-content/uploads/2022/08/2016-PN2-scaled.jpg" alt="bottle"
+                    class="image" />
+                <hr class="hr3">
+            </div>
+        </div>
+       
+        <!-- end pure grid group -->
+        <br>
+
+
+
+        <h2 id="sec3">Which Wine is Should You Drink in Australia?</h2>
+        <!-- pure grid group -->
+        <div class="pure-g">
+            <div class="pure-u-1-2">
+                <div id="vis3" class="vis-container"></div>
+            </div>
+            <div class="pure-u-1-4">
+                <p> If you listen to the sommeliers and go to<span class="highlight"> Tasmania</span>, you sit in a nice restaurant in Hobart, and you
+                    think which wine to order, it would be recommended not to miss the Tasmanian <span class="highlight">Pinot-Noir</span>.
+                <p> In the lush and diverse vineyards of <span class="highlight">Victoria</span> or <span class="highlight">South Australia</span>, where the terroir weaves a
+                    tapestry of flavors, the <span class="highlight">Shiraz</span> emerges as a masterpiece of viniculture, showcasing rich, opulent
+                    notes of blackberry, plum, and a subtle hint of black pepper. This wine embodies the essence of
+                    Victoria's winemaking heritage, a true expression of elegance and depth that captivates the senses.
+
+            </div>
+            <div class="pure-u-1-4">
+                <p> For lovers wild nature, that plan to discover the great beaches of the<span class="highlight"> Western Australia</span>, the
+                    probability to get good <span class="highlight">Cabarnet Sauvignon</span> is higher than the other types.
+                <p><span class="highlight">New South Wales</span>, with its rich viticultural history, presents a tantalizing choice - the <span class="highlight">Shiraz</span> and
+                    Chardonnay, each vying for the spotlight. The Shiraz, bold and robust, tempts with layers of dark
+                    berries, pepper, and a hint of licorice, a testament to the state's wine heritage. Meanwhile, the
+                    Chardonnay, elegant and refined, offers a symphony of citrus, apple, and subtle oak, displaying New
+                    South Wales' mastery of diversity in winemaking.
+
+            </div>
+        </div>
+        <p id="kisur">If you eager to discover more about the Australian Wine and in the other places, click <a href="https://www.wineenthusiast.com/?s=&drink_type=wine">here</a> for more information.</p>
+        <!-- end pure grid group -->
+        <br>
+
+
+        <hr class="hr3">
+
+
+    </div>
+
+
+    <script type="text/javascript">
+        var specVis1 = "Countries_Bar_Charts.json";
+        vegaEmbed('#vis1', specVis1);
+
+        var specVis2 = "Map_Chart.json";
+        vegaEmbed('#vis2', specVis2);
+
+        var specVis3 = "Box_Chart.json";
+        vegaEmbed('#vis3', specVis3);
+
+        print(brush)
+    </script>
+</body>
+
+</html>

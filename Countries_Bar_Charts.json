@@ -1,0 +1,75 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/yraz0002/Assignment-2/main/Filtered_Countries2.csv"
+  },
+
+  "width": 400,
+  "height": {"step": 17},
+  "background":"papayawhip",
+  "config": {
+    "axis": {
+      "labelFont": "serif",
+      "labelFontSize":12,
+      "titleFont": "serif",
+      "titleFontSize":14
+    },
+    "title": {
+      "font": "serif",
+      "fontSize": 16
+    }
+  },
+  "hconcat": [
+    {
+        "title": "Number of Wines per Country",
+      "layer": [
+        {
+          "mark": {"type": "bar", "tooltip": true},
+          "encoding": {
+            "y": {"field": "Country", "sort": "-x"},
+            "x": {
+              "aggregate": "count",
+              "field": "Wines",
+              "title": "Number of Wines",
+              "axis": {"grid": false,"tickCount":5},
+              "scale": {"type": "log", "domain": [1, 100000]}
+            },
+          "color": {
+              "condition": {
+                "test": "datum.Country == 'Australia'",
+                "value": "#b10000"
+              },
+              "value": "#fdcdac"
+              }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Wine Rate per Country",
+          "mark": {"type": "bar", "tooltip": true},
+          "encoding": {
+            "y": {"field": "Country", "sort": "-x"},
+            "x": {
+              "aggregate": "average",
+              "field": "Rate",
+              "title": "Wine Rate",
+              "axis": {"grid": false},
+              "scale": {"type": "linear", "domain": [80, 90]}
+            },
+            "color": {
+              "condition": {
+                "test": "datum.Country == 'Australia'",
+                "value": "#b10000"
+              },
+              "value": "#fdcdac"
+            },
+             "tooltip": [
+        {"field": "Country", "type": "nominal", "title": "Country"},
+        {"field": "Rate", "type": "quantitative","aggregate": "average", "title":"Rate","format":".2f"}
+        ]
+          }
+     
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Wines Rate in the States of Australia",
+  "width": 550,
+  "height": 400,
+  "config": {
+    "axis": {
+      "labelFont": "serif",
+      "labelFontSize":12,
+      "titleFont": "serif",
+      "titleFontSize":14
+    },
+    "title": {
+      "font": "serif",
+      "fontSize": 16
+    },
+    "legend": {
+      "labelFont":"serif",
+      "titleFont":"serif"
+    }
+  },
+  "background":"papayawhip",
+  "data": {
+    "url": "https://raw.githubusercontent.com/yraz0002/Assignment-2/main/ne_50m_admin_1_states_provinces%20(4).json",
+    "format": {"type": "topojson", "feature": "ne_50m_admin_1_states_provinces"}
+  },
+  "projection": {"type": "mercator"},
+  "layer": [
+    {
+      "transform": [
+        {"calculate": "'Data is not available in the ' + datum.properties.name_en", "as": "note"}
+    ],
+    "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
+    "encoding": {
+      "tooltip": {
+        "field": "note"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "lookup": "properties.name_en",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/yraz0002/Assignment-2/main/Map_Data.csv"
+            },
+            "key": "State",
+            "fields": ["points"]
+          }
+        }
+      ],
+      "mark": {"type": "geoshape"},
+      "encoding": {
+        "color": {
+          "field": "points",
+          "title":"Rate",
+          "type": "quantitative",
+          "scale": {"type": "threshold",
+          "domain": [82, 84, 86,88,90,92,94,96,98],
+          "range":["#fcb49a","#fc9e80","#fc8767","#fa7051","#f6573f","#ec3f2f","#dc2a25","#c81b1d","#b21218"]
+          
+        }
+      },
+      "tooltip": [
+        {"field": "properties.name_en", "type": "nominal", "title": "State"},
+        {"field": "points", "type": "quantitative", "title":"Rate","format":".2f"}
+      ]
+    }
+  }
+  ]
+  
+}
